@@ -3,6 +3,13 @@ Feature: Perform integrated tests on the Avengers registration API
 Background:
 * url 'https://tk82m6ewu2.execute-api.us-east-1.amazonaws.com/dev/'
 
+Scenario: Should return invalid access
+
+Given path 'avengers', 'any-id'
+When method get
+Then status 401
+
+
 Scenario: Should return not found Avenger
 
 Given path 'avengers', 'not-found-id'
